@@ -19,7 +19,7 @@ public class ServerMain {
         try {
             server.receive();
         } catch (Exception e) {
-            log.warn("服务器网络接收异常：" + e.toString());
+            log.warn("服务器网络接收异常,异常为：" + e.toString());
         }
 
         log.info("服务器应用程序，正常退出!");
