@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    配置文件主要包括2部分内容：
+        a.各模块实现类全包名(实例化模块对象)
+        b.各模块下的属性值(解决硬编码问题)
+ -->
+<environment>
+    <gather class="com.briup.env.client.GatherBackupImpl">
+        <gatherFilePath>env-gather-impl/src/main/resources/data-file-simple</gatherFilePath>
+        <gatherBackupFilePath>env-gather-impl/src/main/resources/gather-backup.txt</gatherBackupFilePath>
+    </gather>
+
+    <logger class="com.briup.env.util.LogImpl"></logger>
+
+    <backup class="com.briup.env.util.BackupImpl"/>
+
+    <client class="com.briup.env.client.ClientImpl">
+        <serverIP>127.0.0.1</serverIP>
+        <serverPort>9999</serverPort>
+    </client>
+
+    <server class="com.briup.env.server.ServerImpl">
+        <isStop>false</isStop>
+        <port>9999</port>
+    </server>
+
+    <dbStore class="com.briup.env.server.DBStoreBackupImpl">
+        <dbstoreBackupFilePath>src/main/resources/db-backup.txt</dbstoreBackupFilePath>
+    </dbStore>
+
+</environment>
